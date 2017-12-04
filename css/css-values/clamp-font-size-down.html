@@ -8,9 +8,9 @@
 <script src="/resources/testharness.js"></script>
 <script src="/resources/testharnessreport.js"></script>
 <style>
-	.test { border: thick solid; font-size: calc(50px); animation: bounce 2s infinite linear;}
+	.test { border: thick solid; font-size: calc(-50px); animation: bounce 2s infinite linear;}
 	@keyframes bounce {
-	  0% { font-size: calc(150px); }
+	  0% { font-size: calc(50px); }
 	}
 </style>
 </head>
@@ -23,7 +23,7 @@
 		return (window.getComputedStyle(testDiv)["font-size"]);
 	}
 		testDiv.setAttribute("class", "test");
-/*
+
 	async_test(function(t) {
 		testDiv.setAttribute("class", "test");
 		setTimeout('clampedWidth = checkWidth();', 1500);
@@ -31,6 +31,6 @@
 			assert_equals ( clampedWidth, "0px" );
 			t.done();
 		}, 2000);
-	})*/
+	})
 </script>
 <!DOCTYPE html>
